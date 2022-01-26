@@ -1,11 +1,16 @@
 <?php
-/**
- * @author naingminkhant created on 26/01/2022
- */
 
 namespace App\Services\EmployeeManagement;
 
-class Staff
+class Staff implements Employee
 {
+    public function applyJob()
+    {
+        // TODO: Implement applyJob() method.
+    }
     
+    public function salary(): int
+    {
+        return 200;
+    }
 }
