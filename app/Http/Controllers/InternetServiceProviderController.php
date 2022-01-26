@@ -18,4 +18,15 @@ class InternetServiceProviderController extends Controller
             'data' => $amount
         ]);
     }
+    
+    public function getOoredooInvoiceAmount(Request $request)
+    {
+        $ooredoo = new Ooredoo();
+        $ooredoo->setMonth($request->get('month') ?: 1);
+        $amount = $ooredoo->totalAmount();
+        
+        return response()->json([
+            'data' => $amount
+        ]);
+    }
 }
