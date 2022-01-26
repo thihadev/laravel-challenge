@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InternetServiceProviderController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +27,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('mpt/invoice-amount', [InternetServiceProviderController::class, 'getMptInvoiceAmount']);
     Route::post('ooredoo/invoice-amount', [InternetServiceProviderController::class, 'getOoredooInvoiceAmount']);
     
+    Route::post('job/apply', [JobController::class, 'apply']);
 });
