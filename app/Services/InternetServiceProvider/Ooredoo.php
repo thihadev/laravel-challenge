@@ -15,7 +15,7 @@ class Ooredoo extends Mpt
         $this->month = $month;
     }
     
-    public function totalAmount()
+    public function calculateTotalAmount()
     {
         return $this->month * $this->monthlyFees;
     }

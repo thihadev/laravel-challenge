@@ -12,7 +12,7 @@ class InternetServiceProviderController extends Controller
     {
         $mpt = new Mpt();
         $mpt->setMonth($request->get('month') ?: 1);
-        $amount = $mpt->totalAmount();
+        $amount = $mpt->calculateTotalAmount();
         
         return response()->json([
             'data' => $amount
@@ -23,7 +23,7 @@ class InternetServiceProviderController extends Controller
     {
         $ooredoo = new Ooredoo();
         $ooredoo->setMonth($request->get('month') ?: 1);
-        $amount = $ooredoo->totalAmount();
+        $amount = $ooredoo->calculateTotalAmount();
         
         return response()->json([
             'data' => $amount
