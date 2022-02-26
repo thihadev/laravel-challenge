@@ -2,9 +2,17 @@
 
 namespace App\Services\EmployeeManagement;
 
-interface Employee
+trait Employee
 {
-    public function applyJob();
+    public $emp;
     
-    public function salary();
+    public function applyJob(): bool
+    {
+        return true;
+    }
+    
+    public function salary(): int
+    {
+        return 200;
+    }
 }
