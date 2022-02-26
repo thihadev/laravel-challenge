@@ -11,22 +11,20 @@ class InternetServiceProviderController extends Controller
     public function getMptInvoiceAmount(Request $request)
     {
         $mpt = new Mpt();
-        $mpt->setMonth($request->get('month') ?: 1);
-        $amount = $mpt->calculateTotalAmount();
+        $mpt->setMonth($request->month ?: 1);
         
         return response()->json([
-            'data' => $amount
+            'data' => $mpt->calculateTotalAmount()
         ]);
     }
     
     public function getOoredooInvoiceAmount(Request $request)
     {
         $ooredoo = new Ooredoo();
-        $ooredoo->setMonth($request->get('month') ?: 1);
-        $amount = $ooredoo->calculateTotalAmount();
-        
+        $ooredoo->setMonth($request->month ?: 1);
+
         return response()->json([
-            'data' => $amount
+            'data' => $ooredoo->calculateTotalAmount()
         ]);
     }
 }
